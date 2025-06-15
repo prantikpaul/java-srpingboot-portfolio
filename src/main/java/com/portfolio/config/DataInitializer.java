@@ -20,7 +20,7 @@ public class DataInitializer implements CommandLineRunner {
             Project project1 = new Project();
             project1.setTitle("Portfolio Website");
             project1.setDescription("A personal portfolio website built with Spring Boot and Thymeleaf.");
-            project1.setImageUrl("/images/portfolio.jpg");
+            project1.setImageUrl("/images/portfolio.svg");
             project1.setProjectUrl("#");
             project1.setGithubUrl("https://github.com/yourusername/portfolio");
             project1.setTechnologies("Java, Spring Boot, Thymeleaf, H2 Database, Bootstrap");
@@ -29,7 +29,7 @@ public class DataInitializer implements CommandLineRunner {
             Project project2 = new Project();
             project2.setTitle("E-commerce Platform");
             project2.setDescription("A full-featured e-commerce platform with product management, shopping cart, and payment integration.");
-            project2.setImageUrl("/images/ecommerce.jpg");
+            project2.setImageUrl("/images/ecommerce.svg");
             project2.setProjectUrl("#");
             project2.setGithubUrl("https://github.com/yourusername/ecommerce");
             project2.setTechnologies("Java, Spring Boot, React, MySQL, REST API");
@@ -38,7 +38,7 @@ public class DataInitializer implements CommandLineRunner {
             Project project3 = new Project();
             project3.setTitle("Task Management App");
             project3.setDescription("A task management application with user authentication, task creation, and progress tracking.");
-            project3.setImageUrl("/images/taskmanager.jpg");
+            project3.setImageUrl("/images/taskmanager.svg");
             project3.setProjectUrl("#");
             project3.setGithubUrl("https://github.com/yourusername/taskmanager");
             project3.setTechnologies("Java, Spring Boot, Angular, PostgreSQL");

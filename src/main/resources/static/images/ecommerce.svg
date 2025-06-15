@@ -1,0 +1,11 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#111827"/>
+  <text x="400" y="200" font-family="Arial" font-size="48" text-anchor="middle" fill="#ef4444">E-commerce Platform</text>
+  <rect x="200" y="250" width="400" height="200" rx="10" fill="#1f2937"/>
+  <circle cx="300" cy="350" r="50" fill="#f59e0b"/>
+  <rect x="380" y="300" width="150" height="30" rx="5" fill="#f59e0b"/>
+  <rect x="380" y="350" width="150" height="30" rx="5" fill="#f59e0b"/>
+  <text x="400" y="480" font-family="Arial" font-size="24" text-anchor="middle" fill="#f59e0b">30% OFF</text>
+  <rect x="300" y="500" width="200" height="50" rx="10" fill="#ef4444"/>
+  <text x="400" y="535" font-family="Arial" font-size="24" text-anchor="middle" fill="white">SHOP NOW</text>
+</svg>

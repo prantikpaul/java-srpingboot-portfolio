@@ -1,0 +1,28 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#0f172a"/>
+  <text x="400" y="100" font-family="Arial" font-size="48" text-anchor="middle" fill="#a855f7">Task Management App</text>
+  
+  <!-- Task List Background -->
+  <rect x="150" y="150" width="500" height="400" rx="10" fill="#1e293b"/>
+  
+  <!-- Task Items -->
+  <rect x="180" y="200" width="440" height="60" rx="5" fill="#334155"/>
+  <rect x="200" y="220" width="20" height="20" rx="2" fill="#22c55e"/>
+  <text x="240" y="235" font-family="Arial" font-size="18" fill="white">Task 1</text>
+  <text x="550" y="235" font-family="Arial" font-size="14" fill="#94a3b8">Done</text>
+  
+  <rect x="180" y="280" width="440" height="60" rx="5" fill="#334155"/>
+  <rect x="200" y="300" width="20" height="20" rx="2" fill="#f59e0b"/>
+  <text x="240" y="315" font-family="Arial" font-size="18" fill="white">Task 2</text>
+  <text x="550" y="315" font-family="Arial" font-size="14" fill="#94a3b8">Working on it</text>
+  
+  <rect x="180" y="360" width="440" height="60" rx="5" fill="#334155"/>
+  <rect x="200" y="380" width="20" height="20" rx="2" fill="#ef4444"/>
+  <text x="240" y="395" font-family="Arial" font-size="18" fill="white">Task 3</text>
+  <text x="550" y="395" font-family="Arial" font-size="14" fill="#94a3b8">Stuck</text>
+  
+  <rect x="180" y="440" width="440" height="60" rx="5" fill="#334155"/>
+  <rect x="200" y="460" width="20" height="20" rx="2" fill="#a855f7"/>
+  <text x="240" y="475" font-family="Arial" font-size="18" fill="white">Task 4</text>
+  <text x="550" y="475" font-family="Arial" font-size="14" fill="#94a3b8">Custom</text>
+</svg>

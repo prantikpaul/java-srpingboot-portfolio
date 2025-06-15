@@ -71,16 +71,31 @@ header {
     margin-bottom: 2rem;
 }
 
+/* Button Styles */
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     padding: 0.75rem 1.5rem;
     font-weight: 500;
+    color: white !important; /* Ensure text is always white */
 }
 
 .btn-primary:hover {
     background-color: #0069d9;
     border-color: #0062cc;
+    color: white !important;
+}
+
+.btn-warning {
+    color: #212529 !important; /* Dark text for warning button */
+}
+
+.btn-danger {
+    color: white !important; /* White text for danger button */
+}
+
+.btn-success {
+    color: white !important; /* White text for success button */
 }
 
 /* About Section */
@@ -148,8 +163,10 @@ header {
 
 .project-img {
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
+    background-color: #f8f9fa;
+    padding: 10px;
 }
 
 .project-info {
@@ -280,4 +297,18 @@ footer {
     .about-img {
         max-width: 200px;
     }
+}
+
+/* Small Button Styles */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+.project-links .btn {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
 }

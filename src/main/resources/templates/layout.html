@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, content)">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      th:fragment="layout(title, content)">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +38,18 @@
                         <li class="nav-item">
                             <a class="nav-link" th:href="@{/contact}">Contact</a>
                         </li>
+                        <!-- Login/Logout Links -->
+                        <li class="nav-item" sec:authorize="!isAuthenticated()">
+                            <a class="nav-link" th:href="@{/login}">
+                                <i class="fas fa-sign-in-alt me-1"></i> Login
+                            </a>
+                        </li>
+                        <li class="nav-item" sec:authorize="isAuthenticated()">
+                            <a class="nav-link" href="javascript:void(0)" onclick="document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt me-1"></i> Logout
+                            </a>
+                            <form id="logout-form" th:action="@{/logout}" method="post" style="display: none;"></form>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -50,7 +64,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+            <p>&copy; 2025 Prantik Paul . All rights reserved.</p>
         </div>
     </footer>
 
