@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+      th:replace="~{layout :: layout(~{::title}, ~{::main})}">
+<head>
+    <title th:text="${project.id == null ? 'Add New Project' : 'Edit Project'} + ' | My Portfolio'">Project Form | My Portfolio</title>
+</head>
+<body>
+    <main>
+        <section class="project-form py-5">
+            <div class="container">
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                        <li class="breadcrumb-item"><a th:href="@{/projects}">Projects</a></li>
+                        <li class="breadcrumb-item active" aria-current="page" th:text="${project.id == null ? 'Add New Project' : 'Edit Project'}">Project Form</li>
+                    </ol>
+                </nav>
+                
+                <div class="form-container">
+                    <h2 class="mb-4" th:text="${project.id == null ? 'Add New Project' : 'Edit Project'}">Project Form</h2>
+                    
+                    <form th:action="@{/projects/save}" th:object="${project}" method="post" class="needs-validation" novalidate>
+                        <!-- Hidden ID field for edit mode -->
+                        <input type="hidden" th:field="*{id}">
+                        
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Project Title</label>
+                            <input type="text" class="form-control" id="title" th:field="*{title}" required>
+                            <div class="invalid-feedback" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Please provide a title.</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" th:field="*{description}" rows="5" required></textarea>
+                            <div class="invalid-feedback" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Please provide a description.</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="imageUrl" class="form-label">Image URL</label>
+                            <input type="text" class="form-control" id="imageUrl" th:field="*{imageUrl}">
+                            <small class="form-text text-muted">Enter the URL of the project image or upload path.</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="projectUrl" class="form-label">Project URL</label>
+                            <input type="url" class="form-control" id="projectUrl" th:field="*{projectUrl}">
+                            <small class="form-text text-muted">Enter the URL of the live project (if available).</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="githubUrl" class="form-label">GitHub URL</label>
+                            <input type="url" class="form-control" id="githubUrl" th:field="*{githubUrl}">
+                            <small class="form-text text-muted">Enter the URL of the GitHub repository (if available).</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="technologies" class="form-label">Technologies</label>
+                            <input type="text" class="form-control" id="technologies" th:field="*{technologies}">
+                            <small class="form-text text-muted">Enter the technologies used, separated by commas (e.g., Java, Spring Boot, Thymeleaf).</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Date</label>
+                            <input type="text" class="form-control" id="date" th:field="*{date}">
+                            <small class="form-text text-muted">Enter the project completion date (e.g., 2023).</small>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mt-4">
+                            <a th:href="@{/projects}" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left me-2"></i> Cancel
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i> Save Project
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

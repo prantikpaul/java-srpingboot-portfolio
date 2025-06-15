@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+      th:replace="~{layout :: layout(~{::title}, ~{::main})}">
+<head>
+    <title>Home | My Portfolio</title>
+</head>
+<body>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to My Portfolio</h1>
+                <p>I'm a passionate software developer specializing in Java and Spring Boot</p>
+                <a th:href="@{/projects}" class="btn btn-primary">View My Work</a>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="projects py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>Featured Projects</h2>
+                    <p>Here are some of my recent works</p>
+                </div>
+                
+                <div class="row">
+                    <!-- Project cards will be populated from the database -->
+                    <div class="col-md-4 mb-4" th:each="project : ${projects}" th:if="${projectStat.index < 3}">
+                        <div class="project-card h-100">
+                            <img th:src="${project.imageUrl}" class="project-img" alt="Project Image">
+                            <div class="project-info">
+                                <h3 class="project-title" th:text="${project.title}">Project Title</h3>
+                                <p class="project-tech" th:text="${project.technologies}">Technologies Used</p>
+                                <p class="project-desc" th:text="${#strings.abbreviate(project.description, 100)}">Project Description</p>
+                                <div class="project-links">
+                                    <a th:href="@{/projects/{id}(id=${project.id})}" class="btn btn-sm btn-outline-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a th:href="@{/projects}" class="btn btn-outline-primary">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>My Skills</h2>
+                    <p>Technologies and tools I work with</p>
+                </div>
+                
+                <div class="row text-center">
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-item p-3 bg-white rounded shadow-sm">
+                            <i class="fab fa-java fa-3x mb-3 text-primary"></i>
+                            <h4>Java</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-item p-3 bg-white rounded shadow-sm">
+                            <i class="fas fa-leaf fa-3x mb-3 text-success"></i>
+                            <h4>Spring Boot</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-item p-3 bg-white rounded shadow-sm">
+                            <i class="fas fa-database fa-3x mb-3 text-info"></i>
+                            <h4>SQL/NoSQL</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-item p-3 bg-white rounded shadow-sm">
+                            <i class="fab fa-html5 fa-3x mb-3 text-danger"></i>
+                            <h4>HTML/CSS</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-item p-3 bg-white rounded shadow-sm">
+                            <i class="fab fa-js fa-3x mb-3 text-warning"></i>
+                            <h4>JavaScript</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-item p-3 bg-white rounded shadow-sm">
+                            <i class="fab fa-react fa-3x mb-3 text-primary"></i>
+                            <h4>React</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-item p-3 bg-white rounded shadow-sm">
+                            <i class="fab fa-git-alt fa-3x mb-3 text-danger"></i>
+                            <h4>Git</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-item p-3 bg-white rounded shadow-sm">
+                            <i class="fas fa-cloud fa-3x mb-3 text-info"></i>
+                            <h4>Cloud</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta py-5 text-center">
+            <div class="container">
+                <h2 class="mb-4">Interested in working together?</h2>
+                <a th:href="@{/contact}" class="btn btn-primary">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
